@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>常用链接</title>
+    <link rel="stylesheet" href="https://font.c2cmalls.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel='stylesheet prefetch' href='https://cdnjs.c2cbc.com/ajax/libs/angular-material/1.0.6/angular-material.min.css'>
+<link rel='stylesheet prefetch' href='https://material.angularjs.org/1.0.6/docs.css'>
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div ng-controller="AppCtrl" class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="" ng-app="MyApp">
+  <md-content class="md-padding">
+    <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect="">
+      <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}">
+        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+          <div ng-bind="tab.content"></div>
+          <br>
+          <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">删除标签</md-button>
+		
+                  
+
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+  <form ng-submit="addTab(tTitle,tContent)" layout="column" class="md-padding" style="padding-top: 0;">
+    <div layout="row" layout-sm="column">
+      <div flex="" style="position: relative;">
+        <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">添加标签:</h2>
+      </div>
+      <md-input-container>
+        <label for="label">标签名</label>
+        <input type="text" id="label" ng-model="tTitle">
+      </md-input-container>
+      <md-input-container>
+        <label for="content">内容</label>
+        <input type="text" id="content" ng-model="tContent">
+      </md-input-container>
+      <md-button class="add-tab md-primary md-raised" ng-disabled="!tTitle || !tContent" type="submit" style="margin-right: 0;">添加标签</md-button>
+	  		   
+    </div>
+  </form>
+    
+</div>
+    <script src='https://ajax.c2cmalls.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+<script src='https://ajax.c2cmalls.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+<script src='https://ajax.c2cmalls.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+<script src='https://ajax.c2cmalls.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+<script src='https://ajax.c2cmalls.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+<script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
+<script src='https://cdnjs.c2cbc.com/ajax/libs/angular-material/1.0.6/angular-material.min.js'></script>
+<script type="text/javascript" src="https://cdnjs.c2cbc.com/ajax/libs/clipboard.js/1.5.9/clipboard.min.js"></script>
+        <script src="js/index.js"></script>
+  </body>
+</html>
